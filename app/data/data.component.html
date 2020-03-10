@@ -1,0 +1,76 @@
+<p>Witam bardzo serdecznie {{title | uppercase}}</p>
+<p>Moj pies to {{dog.name}} i ma {{dog.age}} latka</p>
+<p>Moj pies to {{dog2?.name}} i ma {{dog2?.age}} latka</p>
+{{hejka()}}
+{{dog.showDog()}}
+
+<ul>
+  <li *ngFor="let item of days">
+    {{item}}
+  </li>
+</ul>
+
+<ul>
+  <li *ngFor="let item of dogs; let i = index">
+    Index - {{i}}. {{item.name}} - {{item.age}}
+  </li>
+</ul>
+
+<app-test *ngFor="let item of [1,2,3,4]"></app-test>
+
+<ul>
+  <p *ngFor="let day of days; let e = even ">
+    <li *ngIf="e">
+      {{day}}
+    </li>
+  </p>
+</ul>
+
+<p>tylko parzyste dni, jeśli tablica jest wieksza od zera</p>
+<div *ngIf="days.length > 0">
+  <ul>
+    <ng-container *ngFor="let day of days; let e = even ">
+      <li *ngIf="e">
+        {{day}}
+      </li>
+    </ng-container>
+  </ul>
+</div>
+
+<p>psy, które maja wiecej niz 6 lat</p>
+<ul>
+  <li *ngFor="let dog of dogs">
+    <div *ngIf="dog.age > 6">
+      {{dog.name}}
+    </div>
+  </li>
+</ul>
+
+
+<p>sterowanie wyswietlanie elementów</p>
+<div *ngIf="dogs.length > 0; else noDogs">
+    <div *ngFor="let dog of dogs">
+        {{dog.age}}
+    </div>
+</div>
+
+<ng-template #noDogs>
+    <p>Piesków nie ma</p>
+</ng-template>
+
+<div *ngFor="let day of days">
+    <div [ngSwitch] = "day">
+        <div *ngSwitchCase="'Wtorek'">
+            {{day}} - Wt
+        </div>
+        <div *ngSwitchCase="'Czwartek'">
+            {{day}} - Czw
+        </div>
+        <div *ngSwitchCase="'Sobota'">
+            {{day}} - Sb
+        </div>
+        <div *ngSwitchDefault>
+            {{day}} - inny dzien tygoidnia
+        </div>
+    </div>
+</div>
