@@ -74,3 +74,49 @@
         </div>
     </div>
 </div>
+
+<h3 [className] = "colorClass">Property binding</h3>
+<img [src] = "logoUrl">
+<input [maxLength]="maxLength" [value]="inputText">
+<button [disabled] = "isDisable" (click)="change()">Dodaj</button>
+
+
+
+<h3 [className] = "colorClass">Event binding</h3>
+
+<input [disabled] ="isDisable" (focus)="onFocus()">
+<br>
+<input [disabled] ="isDisable" (click)="onClick($event)">
+<br>
+<input [disabled] ="isDisable" (mousemove)="onMouseMove($event)">
+<br>
+<input [disabled] ="isDisable" (focus)="onPaste()">{{inputText}}
+<br>
+<button (click)="change()">Zmiana</button>
+
+
+
+<h3 [className] = "colorClass">Property binding + event binding</h3>
+
+<p>Ten pracownik to {{profession}}, a jego umiejetnosci to {{skill}}</p>
+
+<label for="male">Zawód</label>
+<input [value] = "profession" (input)="saveP($event)">
+<br>
+<label for="male">Umiejetnosc</label>
+<input [value] = "skill" (input)="saveS($event)">
+
+
+
+
+
+<h3 [className] = "colorClass">Two way data binding</h3>
+<p>Ten pracownik to {{profession}}, a jego umiejetnosci to {{skill}}</p>
+
+<label for="male">Zawód</label>
+<input [(ngModel)]="profession">
+<br>
+<label for="male">Umiejetnosc</label>
+<input [(ngModel)]="skill">
+
+
