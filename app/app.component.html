@@ -522,7 +522,14 @@
 <app-test2></app-test2>
 <app-data></app-data>
 <app-zadanie1></app-zadanie1>
+<br>
+<p>zadanie2</p>
+<app-zadanie2></app-zadanie2>
 </div>
+<br>
+<br>
+<app-child  [tasks] = "tasksList" (eventTask)="selected($event)"></app-child>
+
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->

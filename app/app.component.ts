@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-basics';
+  tasksList = ['Sprzatanie', 'Gotowanie'];
+  selected(task: string) {
+    console.log(task);
+
+  }
 }

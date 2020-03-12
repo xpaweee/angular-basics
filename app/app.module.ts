@@ -9,6 +9,11 @@ import { Test2Component } from './test2/test2.component';
 import { DataComponent } from './data/data.component';
 import { Data2Component } from './data2/data2.component';
 import { Zadanie1Component } from './zadanie1/zadanie1.component';
+import { ChildComponent } from './child/child.component';
+import { AddTaskComponent } from './add-task/add-task.component';
+import { Zadanie2Component } from './zadanie2/zadanie2.component';
+import { TodoTaskComponent } from './todo-task/todo-task.component';
+import { DoneTaskComponent } from './done-task/done-task.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +22,12 @@ import { Zadanie1Component } from './zadanie1/zadanie1.component';
     Test2Component,
     DataComponent,
     Data2Component,
-    Zadanie1Component
+    Zadanie1Component,
+    ChildComponent,
+    AddTaskComponent,
+    Zadanie2Component,
+    TodoTaskComponent,
+    DoneTaskComponent
   ],
   imports: [
     BrowserModule,
