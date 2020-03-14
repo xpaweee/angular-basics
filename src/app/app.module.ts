@@ -14,6 +14,8 @@ import { AddTaskComponent } from './add-task/add-task.component';
 import { Zadanie2Component } from './zadanie2/zadanie2.component';
 import { TodoTaskComponent } from './todo-task/todo-task.component';
 import { DoneTaskComponent } from './done-task/done-task.component';
+import { Zadanie3Component } from "./zadanie3/Zadanie3Component";
+import { Zadanie4Component } from './zadanie4/zadanie4.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { DoneTaskComponent } from './done-task/done-task.component';
     AddTaskComponent,
     Zadanie2Component,
     TodoTaskComponent,
-    DoneTaskComponent
+    DoneTaskComponent,
+    Zadanie3Component,
+    Zadanie4Component
   ],
   imports: [
     BrowserModule,

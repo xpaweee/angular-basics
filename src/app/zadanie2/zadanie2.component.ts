@@ -23,6 +23,10 @@ export class Zadanie2Component implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.taskList = ['Zadanie1', 'Zadanie2', 'Zadanie 3'];
   }
 
+  getColor(): string {
+    return this.taskList.length >= 5 ? 'red' : 'green';
+  }
 }

@@ -530,6 +530,14 @@
 <br>
 <app-child  [tasks] = "tasksList" (eventTask)="selected($event)"></app-child>
 
+<br>
+<p>
+  ZADANIE 4
+</p>
+
+<app-zadanie4 #zadanie4Ref [tasks] = "tasksList"></app-zadanie4>
+<input #inputText>
+<button (click)="add(inputText)"> Dodaj</button>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->

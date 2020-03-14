@@ -1,0 +1,8 @@
+<p>child works!</p>
+
+<div *ngFor="let item of tasks; let odd = odd" [ngClass]="{'odd-li': odd ===true}"  >
+  <ul>
+    <li>{{item}}</li>
+  </ul>
+
+</div>
