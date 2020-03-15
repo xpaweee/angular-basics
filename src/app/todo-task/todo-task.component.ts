@@ -1,4 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { TasksService } from '../Services/tasks.service';
+import {Task} from '../Model/task';
 
 @Component({
   selector: 'app-todo-task',
@@ -7,24 +9,32 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class TodoTaskComponent implements OnInit {
 
-  @Input()
-  taksList = [];
+  tasksList: Array<Task> = [];
+  // @Input()
+  // taksList = [];
 
-  @Output()
-  emitDone = new EventEmitter<string>();
+  // @Output()
+  // emitDone = new EventEmitter<string>();
 
-  @Output()
-  emitRemove = new EventEmitter<string>();
+  // @Output()
+  // emitRemove = new EventEmitter<string>();
 
+  constructor(private tasksService: TasksService) {
+    this.tasksService.getTasksListObs().subscribe((data: Array<Task>) => {
+      //zwraca tą sama talibce, ale z nowa referencja. Dzieki temu pipe od sort-name ogarnie i posortuje wartosci
+        this.tasksList = data.slice();
+      });
+  }
 
-  constructor() { }
-
-  remove(task: string) {
-    this.emitRemove.emit(task);
+  remove(task: Task) {
+    // this.emitRemove.emit(task);
+    this.tasksService.remove(task);
 
   }
-  done(task: string) {
-    this.emitDone.emit(task);
+  done(task: Task) {
+    // this.emitDone.emit(task);
+    task.end = new Date();
+    this.tasksService.add(task);
   }
 
   ngOnInit(): void {

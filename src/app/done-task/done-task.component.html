@@ -1,6 +1,6 @@
 <p>Wykonane zadnia {{doneTaskList.length}}</p>
       <ul>
-        <li *ngFor="let item of doneTaskList">
-          {{item}}
+        <li appChecked appDate [date]="item.end" *ngFor="let item of doneTaskList | sortName">
+          {{item.name | transformTask: ' - super!'}}
         </li>
       </ul>
